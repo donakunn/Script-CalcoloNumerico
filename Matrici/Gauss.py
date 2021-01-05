@@ -5,19 +5,17 @@ Created on Mon Jan  4 19:30:34 2021
 @author: donal
 """
 
-def pprint(A):
-    n = len(A)
-    for i in range(0, n):
-        line = ""
-        for j in range(0, n + 1):
-            line += str(A[i][j]) + "\t"
-            if j == n - 1:
-                line += "| "
-        print(line)
-    print("")
-
-
-def gauss(A):
+def gaussWithMaxPivot(A):
+    """
+    Algoritmo di eliminazione di Gauss con tecnica del massimo pivot parziale
+    Parametri di input
+    ------------------
+    A: matrice completa di cui calcolare le soluzioni
+    
+    Parametri di output
+    -------------------
+    x: vettore delle soluzioni del sistema lineare
+    """
     n = len(A)
 
     for i in range(0, n):
@@ -51,35 +49,3 @@ def gauss(A):
         for k in range(i - 1, -1, -1):
             A[k][n] -= A[k][i] * x[i]
     return x
-
-
-if __name__ == "__main__":
-    from fractions import Fraction
-
-    n = input()
-
-    A = [[0 for j in range(n + 1)] for i in range(n)]
-
-    # Read input data
-    for i in range(0, n):
-        line = map(Fraction, raw_input().split(" "))
-        for j, el in enumerate(line):
-            A[i][j] = el
-    raw_input()
-
-    line = raw_input().split(" ")
-    lastLine = map(Fraction, line)
-    for i in range(0, n):
-        A[i][n] = lastLine[i]
-
-    # Print input
-    pprint(A)
-
-    # Calculate solution
-    x = gauss(A)
-
-    # Print result
-    line = "Result:\t"
-    for i in range(0, n):
-        line += str(x[i]) + "\t"
-    print(line)

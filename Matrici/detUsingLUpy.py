@@ -5,13 +5,17 @@ Created on Mon Jan  4 17:47:55 2021
 @author: donal
 """
 
-from fattLU import fattlu
+"""
+Funzioni che utilizzano la tecnica del massimo pivot parziale con scopi diversi
+"""
+
+from fatLUMaxPivot import fattLUmaxPivot
 
 
 def detUsingLU(A):
     """
     La funzione calcola il determinante di una matrice utilizzando la 
-    fattorizzazione LU
+    fattorizzazione LU con tecnica del massimo Pivot parziale
 
     Parameters
     ----------
@@ -23,8 +27,9 @@ def detUsingLU(A):
 
     """
     
-    L,U = fattlu(A)
+    P,L,U = fattLUmaxPivot(A)
     det = 1
     for i in range(0,len(U)):
         det = det * U[i,i]
     return det
+

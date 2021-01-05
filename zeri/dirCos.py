@@ -14,14 +14,14 @@ def dir_cost(f,m,x0,tol,itmax):
     ------------------
     f: funzione di cui ricercare uno zero    
     m: parametro del metodo della dir cost.
-   x0: stima iniziale dello zero
-  tol: accuratezza richiesta
-itmax: numero massimo di iterate consentite
+    x0: stima iniziale dello zero
+    tol: accuratezza richiesta
+    itmax: numero massimo di iterate consentite
 
     Parametri di output
     -------------------
-   x1: approssimazione dello zero
-   it: numero di iterazioni effettuate
+    x1: approssimazione dello zero
+    it: numero di iterazioni effettuate
    """
 
     it=0
