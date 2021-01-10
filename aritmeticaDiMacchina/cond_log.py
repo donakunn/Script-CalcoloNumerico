@@ -34,4 +34,3 @@ def cond_log():
     
     
     
-    
