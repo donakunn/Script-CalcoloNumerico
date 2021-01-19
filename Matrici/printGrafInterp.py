@@ -27,6 +27,7 @@ def printGraficoInterp(f,a,b,n):
     xx = np.linspace(a,b,100)
     yFunz = f(xFunz)
     yy = valInterpolazione(x,y, xx)
+    
     plot(xFunz,yFunz,label="grafico funzione")
     plot(x,y,'o',label="nodi")
     plot(xx,yy,label= "grafico polinomio interpolante")

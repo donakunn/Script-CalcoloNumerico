@@ -18,5 +18,5 @@ def g(x):
     return y
 
 def eseguiStampaInterp():
-    printGraficoInterp(f,0,np.pi,4)
+    printGraficoInterp(g,-5,5,80)
     return

@@ -28,7 +28,7 @@ def gaussWithMaxPivot(A):
                 maxRow = k
 
         # Swap maximum row with current row (column by column)
-        for k in range(i, n + 1):
+        for k in range(i, n):
             tmp = A[maxRow][k]
             A[maxRow][k] = A[i][k]
             A[i][k] = tmp
@@ -36,7 +36,7 @@ def gaussWithMaxPivot(A):
         # Make all rows below this one 0 in current column
         for k in range(i + 1, n):
             c = -A[k][i] / A[i][i]
-            for j in range(i, n + 1):
+            for j in range(i, n):
                 if i == j:
                     A[k][j] = 0
                 else:
@@ -45,7 +45,7 @@ def gaussWithMaxPivot(A):
     # Solve equation Ax=b for an upper triangular matrix A
     x = [0 for i in range(n)]
     for i in range(n - 1, -1, -1):
-        x[i] = A[i][n] / A[i][i]
+        x[i] = A[i][n-1] / A[i][i]
         for k in range(i - 1, -1, -1):
-            A[k][n] -= A[k][i] * x[i]
+            A[k][n-1] -= A[k][i] * x[i]
     return x
