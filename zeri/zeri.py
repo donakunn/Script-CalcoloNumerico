@@ -79,20 +79,23 @@ def newton(f,x0,tol=1e-10,itmax=100):
        x1: approssimazione di uno zero di f(x) 
      
       it: numero di iterate eseguite
+      
+      xx : array risultati parziali
 
     Autore: F. Iavernaro
     """
     arresto=False
     it=0 # contatore di iterate
+    xx = []
     while not(arresto) and it<itmax:
         it=it+1
         x1=x0-f(x0)/f(x0,1)
-        print(x1)
+        xx.append(x1)
         arresto=abs(x1-x0)<tol
         x0=x1
     if not(arresto):
         print('Attenzione: precisione non raggiunta')
-    return x1,it
+    return x1,it,xx
      
     
 
