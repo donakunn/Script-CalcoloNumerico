@@ -39,7 +39,7 @@ def taylor_exp(x,n):
     Er1=abs(S1-expx)/expx
 
     #parte grafica
-    semilogy(arange(0,n+1),Er,arange(0,n+1),Er1)
+    semilogy(arange(0,n+1),Er,'.-',arange(0,n+1),Er1,'.-')
     grid(axis='both')
     xlabel('grado del polinomio di Taylor')
     ylabel('errore relativo')

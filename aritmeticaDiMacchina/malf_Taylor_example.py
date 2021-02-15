@@ -21,6 +21,5 @@ def MalFunz_Taylor_example():
     print('i valori considerati sono: 5 (in rosso), -20 (arancio e blu)')
     print('dopo 75 iterate')
     taylor_exp(-20,75)
-    taylor_exp(5,75)
     
 MalFunz_Taylor_example()

@@ -36,6 +36,7 @@ def fiVsNewton():
         x0 = xn
     xN,itN,xxN = newton(f,3)    #xN zero, itN numero iterate, xx array xn Newton
     print('f= x**4-2*x')
+    print('Intervallo [1.2,2.5]')
     print('funzione iteratrice= x = sqrt(sqrt(2x))')
     print('x0 = 3')
     print('tolleranza= ',tol)
